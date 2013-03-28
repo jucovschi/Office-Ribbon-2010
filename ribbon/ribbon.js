@@ -1,16 +1,10 @@
 (function( $ ){
-	$.fn.ribbon = function(id) {
-		if (!id) {
-			if (this.attr('id')) {
-				id = this.attr('id');
-			}
-		}
-		
+	$.fn.ribbon = function() {
+		ribObj = this;
+
 		var that = function() { 
 			return thatRet;
 		};
-		
-		
 		
 		var thatRet = that;
 		
@@ -25,14 +19,8 @@
 		that.returnFromBackstage = function() {
 			ribObj.removeClass('backstage');
 		}	
-		var ribObj = null;
-		
-		that.init = function(id) {
-			if (!id) {
-				id = 'ribbon';
-			}
-		
-			ribObj = $('#'+id);
+	
+		that.init = function() {
 			ribObj.find('.ribbon-window-title').after('<div id="ribbon-tab-header-strip"></div>');
 			var header = ribObj.find('#ribbon-tab-header-strip');
 			
@@ -139,12 +127,12 @@
 		}
 		
 		that.switchToTabByIndex = function(index) {
-			var headerStrip = $('#ribbon #ribbon-tab-header-strip');
+			var headerStrip = ribObj.find('#ribbon-tab-header-strip');
 			headerStrip.find('.ribbon-tab-header').removeClass('sel');
 			headerStrip.find('#ribbon-tab-header-'+index).addClass('sel');
 
-			$('#ribbon .ribbon-tab').hide();
-			$('#ribbon #'+tabNames[index]).show();
+			ribObj.find(".ribbon-tab").hide();
+			ribObj.find('#'+tabNames[index]).show();
 		}
 		
 		$.fn.enable = function() {
@@ -185,7 +173,7 @@
 		}
 	
 	
-		that.init(id);
+		that.init();
 	
 		$.fn.ribbon = that;
 	};
