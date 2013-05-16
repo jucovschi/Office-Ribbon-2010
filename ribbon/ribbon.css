@@ -30,7 +30,6 @@ body
 	overflow: hidden;
 	behavior: url(/PIE.htc);
 	z-index: 25;
-	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -142,7 +141,7 @@ body
 
 .ribbon .ribbon-tab
 {
-	height: 80px;
+	height: 88px;
 	padding: 5px;
 	margin-top: 5px;
 	border-top: 1px solid #b6babf;
@@ -212,7 +211,7 @@ body
 {
 	float: left;
 	position: relative;
-	height: 82px;
+	height: 95px;
 }
 
 .ribbon .ribbon-section-sep
