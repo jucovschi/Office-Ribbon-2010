@@ -21,8 +21,8 @@
 		}	
 	
 		that.init = function() {
-			ribObj.find('.ribbon-window-title').after('<div id="ribbon-tab-header-strip"></div>');
-			var header = ribObj.find('#ribbon-tab-header-strip');
+			ribObj.find('.ribbon-window-title').after('<div class="ribbon-tab-header-strip"></div>');
+			var header = ribObj.find('.ribbon-tab-header-strip');
 			
 			ribObj.find('.ribbon-tab').each(function(index) {
 				var id = $(this).attr('id');
@@ -107,7 +107,7 @@
 		}
 		
 		that.switchToTabByIndex = function(index) {
-			var headerStrip = ribObj.find('#ribbon-tab-header-strip');
+			var headerStrip = ribObj.find('.ribbon-tab-header-strip');
 			headerStrip.find('.ribbon-tab-header').removeClass('sel');
 			headerStrip.find('#ribbon-tab-header-'+index).addClass('sel');
 
